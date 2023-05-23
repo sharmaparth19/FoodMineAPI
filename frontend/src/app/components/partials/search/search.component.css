@@ -1,0 +1,83 @@
+div {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+input {
+  border-radius: 10rem 0 0 10rem;
+  border: none;
+  height: 3rem;
+  width: 20rem;
+  background-color: #f1f1f1;
+  padding: 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  outline: none;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+input:focus {
+  box-shadow: 0 0 0 2px #e72929;
+}
+
+div button {
+  color: grey;
+  height: 3rem;
+  width: 5rem;
+  font-size: 1rem;
+  border-radius: 0 10rem 10rem 0;
+  border: none;
+  background-color: #e72929;
+  color: white;
+  opacity: 0.8;
+  outline: none;
+  transition: opacity 0.2s ease-in-out;
+}
+
+div button:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+div button:active {
+  transform: translateY(2px);
+  opacity: 0.6;
+}
+
+div button:focus {
+  outline: none;
+}
+
+/* Add some animation for the input field */
+
+@keyframes movePlaceholderUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-2rem);
+  }
+}
+
+input:not(:placeholder-shown) ~ label {
+  animation: movePlaceholderUp 0.2s ease-in-out;
+  transform-origin: top left;
+  font-size: 0.8rem;
+  color: #af1313;
+  font-weight: 500;
+}
+
+label {
+  position: absolute;
+  left: 1.7rem;
+  top: 1.5rem;
+  transition: transform 0.2s ease-in-out, font-size 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+/* Add a gradient background to the button */
+
+div button {
+  background: linear-gradient(90deg, #c45ded 0%, #ff4d4d 100%);
+}
